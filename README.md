@@ -10,6 +10,8 @@ Devido à indisponibilidade de acesso à plataforma Dadosfera no momento do dese
 ## 2. Fonte de Dados
 Foi utilizado o dataset público AMAZON-Products-2023, disponibilizado no Hugging Face, contendo metadados reais de produtos de e-commerce.
 
+https://huggingface.co/datasets/milistu/AMAZON-Products-2023/tree/main
+
 Os dados estavam particionados em múltiplos arquivos no formato Apache Arrow (IPC Stream), os quais foram baixados, carregados e concatenados localmente.
 
 Principais campos da base:
