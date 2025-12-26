@@ -1,0 +1,13 @@
+# -------------------------
+# Dados brutos (Hugging Face)
+# -------------------------
+
+# Arquivos Arrow baixados do Hugging Face
+data/raw/*.arrow
+
+# CSVs grandes gerados a partir do Hugging Face
+data/raw/*.csv
+data/silver/*.csv
+data/gold/*.csv
+
+venv/
