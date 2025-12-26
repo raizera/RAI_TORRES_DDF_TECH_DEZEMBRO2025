@@ -3,24 +3,37 @@
 https://huggingface.co/spaces/raigarcia/dadosfera
 
 RAI_TORRES_DDF_TECH_DEZEMBRO2025/
-│
+|
 ├── streamlit_app/
-│   └── app.py                # App Streamlit (usado no Hugging Face Space)
-│
+|   └── app.py
+|       # Aplicação Streamlit executada no Hugging Face Spaces
+|
 ├── notebooks/
-│   └── exploratory.ipynb     # Exploração local (não usado no deploy)
-│
+|   └── exploratory_analysis.ipynb
+|       # Análises exploratórias locais
+|
 ├── scripts/
-│   └── data_processing.py    # Scripts auxiliares
-│
+|   └── data_processing.py
+|       # Scripts auxiliares (opcional)
+|
 ├── data/
-│   ├── raw/                  # Referência conceitual (não versionado)
-│   ├── silver/               # Referência conceitual (não versionado)
-│   └── gold/                 # Referência conceitual (não versionado)
-│
+|   ├── raw/
+|   |   # Dados brutos (não versionados)
+|   |
+|   ├── silver/
+|   |   # Dados tratados (não versionados)
+|   |
+|   └── gold/
+|       # Dados prontos para consumo analítico (não versionados)
+|
 ├── .gitignore
+|   # Ignora dados grandes, venv e cache
+|
 ├── requirements.txt
+|   # Dependências do projeto
+|
 └── README.md
+    # Documentação do projeto
 
 
 ## 1. Contexto
@@ -29,31 +42,35 @@ Este projeto foi desenvolvido como parte de um case técnico na área de dados, 
 Devido à indisponibilidade de acesso à plataforma Dadosfera no momento do desenvolvimento, todo o fluxo foi simulado localmente, respeitando os conceitos, arquitetura e responsabilidades descritas no documento oficial do case. A solução foi estruturada de forma a ser facilmente portável para um ambiente corporativo real.
 
 ---
-┌────────────────────────────┐
-│   Hugging Face Datasets    │
-│ (AMAZON-Products-2023)     │
-└────────────┬───────────────┘
-             │
-             │ load_dataset()
-             │ (download automático)
-             ▼
-┌────────────────────────────┐
-│ Hugging Face Space         │
-│ Streamlit App (Python)     │
-│                            │
-│ - Ingestão                 │
-│ - Processamento            │
-│ - Amostragem               │
-└────────────┬───────────────┘
-             │
-             │ DataFrame em memória
-             ▼
-┌────────────────────────────┐
-│ Camada Analítica           │
-│ Visualizações              │
-│ Filtros interativos        │
-│ Exploração dos dados       │
-└────────────────────────────┘
++-----------------------------+
+|   Hugging Face Datasets     |
+|  AMAZON-Products-2023       |
+|  (dados públicos)           |
++--------------+--------------+
+               |
+               | load_dataset()
+               | download automático
+               v
++-----------------------------+
+|   Hugging Face Spaces       |
+|   Streamlit App (Python)    |
+|                             |
+| - Ingestão dos dados        |
+| - Conversão Arrow → Pandas |
+| - Amostragem (150k linhas) |
+| - Limpeza básica            |
++--------------+--------------+
+               |
+               | DataFrame em memória
+               v
++-----------------------------+
+|   Camada Analítica          |
+|                             |
+| - Filtros interativos       |
+| - Visualizações             |
+| - Exploração dos dados      |
++-----------------------------+
+
 
 ---
 ## 2. Fonte de Dados
