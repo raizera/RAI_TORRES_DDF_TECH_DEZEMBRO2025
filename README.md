@@ -2,13 +2,60 @@
 
 https://huggingface.co/spaces/raigarcia/dadosfera
 
+RAI_TORRES_DDF_TECH_DEZEMBRO2025/
+│
+├── streamlit_app/
+│   └── app.py                # App Streamlit (usado no Hugging Face Space)
+│
+├── notebooks/
+│   └── exploratory.ipynb     # Exploração local (não usado no deploy)
+│
+├── scripts/
+│   └── data_processing.py    # Scripts auxiliares
+│
+├── data/
+│   ├── raw/                  # Referência conceitual (não versionado)
+│   ├── silver/               # Referência conceitual (não versionado)
+│   └── gold/                 # Referência conceitual (não versionado)
+│
+├── .gitignore
+├── requirements.txt
+└── README.md
+
+
 ## 1. Contexto
 Este projeto foi desenvolvido como parte de um case técnico na área de dados, com o objetivo de demonstrar domínio do ciclo completo de dados, incluindo ingestão, exploração, transformação, consumo e disponibilização por meio de um Data App.
 
 Devido à indisponibilidade de acesso à plataforma Dadosfera no momento do desenvolvimento, todo o fluxo foi simulado localmente, respeitando os conceitos, arquitetura e responsabilidades descritas no documento oficial do case. A solução foi estruturada de forma a ser facilmente portável para um ambiente corporativo real.
 
 ---
+┌────────────────────────────┐
+│   Hugging Face Datasets    │
+│ (AMAZON-Products-2023)     │
+└────────────┬───────────────┘
+             │
+             │ load_dataset()
+             │ (download automático)
+             ▼
+┌────────────────────────────┐
+│ Hugging Face Space         │
+│ Streamlit App (Python)     │
+│                            │
+│ - Ingestão                 │
+│ - Processamento            │
+│ - Amostragem               │
+└────────────┬───────────────┘
+             │
+             │ DataFrame em memória
+             ▼
+┌────────────────────────────┐
+│ Camada Analítica           │
+│ Visualizações              │
+│ Filtros interativos        │
+│ Exploração dos dados       │
+└────────────────────────────┘
 
+---
 ## 2. Fonte de Dados
 Foi utilizado o dataset público AMAZON-Products-2023, disponibilizado no Hugging Face, contendo metadados reais de produtos de e-commerce.
 
