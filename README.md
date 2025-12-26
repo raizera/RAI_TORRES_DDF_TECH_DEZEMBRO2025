@@ -1,5 +1,7 @@
 # Case Técnico – Pipeline de Dados e Data App (Simulação de Plataforma Analítica)
 
+https://huggingface.co/spaces/raigarcia/dadosfera
+
 ## 1. Contexto
 Este projeto foi desenvolvido como parte de um case técnico na área de dados, com o objetivo de demonstrar domínio do ciclo completo de dados, incluindo ingestão, exploração, transformação, consumo e disponibilização por meio de um Data App.
 
